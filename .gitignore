@@ -1,0 +1,9 @@
+# ignore intellij files
+.idea/*
+
+# ignore generated jars
+target/*
+
+#ignore intellij config
+*.iml
+
