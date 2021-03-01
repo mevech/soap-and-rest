@@ -1,15 +1,15 @@
-### Testing community extension for SOAP support
+## Testing community extension for SOAP support
 
 minimal code to test out syntax, config and co-living with rest api
 
-try rest-api with: 
+### try rest-api with: 
 ```
 curl http://localhost:8080/hello-rest
 ```
 should get:
 > hello world
 
-try soap-api with:
+### try soap-api with:
 ```bash
 curl "http://localhost:8080/cxf/hello-soap" \
 -H 'Content-Type: text/xml' \
@@ -35,3 +35,7 @@ should get :
 >   </soap:Body>
 > </soap:Envelope>
 > ```
+
+### try openapi-swagger-ui with:
+http://localhost:8080/q/swagger-ui
+
