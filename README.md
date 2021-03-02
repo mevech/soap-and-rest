@@ -1,3 +1,5 @@
+[![Quarkus Codestart CI](https://github.com/evimla/soap-and-rest-1/actions/workflows/ci.yml/badge.svg)](https://github.com/evimla/soap-and-rest-1/actions/workflows/ci.yml)
+
 ## Testing community extension for SOAP support
 
 minimal code to test out syntax, config and co-living with rest api
