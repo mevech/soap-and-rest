@@ -13,7 +13,7 @@
             "ecr:UploadLayerPart",
             "ecr:CompleteLayerUpload"
          ],
-         "Resource":"arn:aws:ecr:us-east-1:123456789012:repository/my-repo"
+         "Resource":"arn:aws:ecr:${REGION}:${ACCOUNT_ID}:repository/${REPOSITORY_NAME}"
       }
    ]
 }
