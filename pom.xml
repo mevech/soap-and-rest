@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
   <artifactId>soap-and-rest</artifactId>
-  <version>!env.COMMIT_HASH</version>
+  <version>${env.COMMIT_HASH}</version>
   <properties>
     <format.skip>false</format.skip>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -39,6 +39,10 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-smallrye-openapi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-health</artifactId>
     </dependency>
   </dependencies>
   <build>

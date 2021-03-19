@@ -28,16 +28,15 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-2
+          aws-region: eu-north-1
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
       - name: Build, tag, and push image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{github.repository}}
-          IMAGE_TAG1: $COMMIT_HASH
-          IMAGE_TAG2: ${{ steps.date.outputs.date }}
+          ECR_REPOSITORY: ${{github.event.repository.name }}
+          IMAGE_TAG1: ${{ github.sha }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG1 -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG2 .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG1 .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY --all-tags
