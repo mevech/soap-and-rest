@@ -44,7 +44,7 @@ jobs:
           IMAGE_TAG1: ${{ github.sha }}
           IMAGE_TAG2: ${{ steps.date.outputs.date }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG1 -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG2 .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG1 .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY --all-tags
       - name: Build, tag, and push image to Amazon ECR
         working-directory: ./client
@@ -54,7 +54,7 @@ jobs:
           IMAGE_TAG1: ${{ github.sha }}
           IMAGE_TAG2: ${{ steps.date.outputs.date }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG1 -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG2 .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG1 .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY --all-tags
 
 
