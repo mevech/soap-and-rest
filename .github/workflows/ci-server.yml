@@ -42,7 +42,7 @@ jobs:
         working-directory: ./server
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{github.repository}}-server
+          ECR_REPOSITORY: ${{ github.event.repository.name }}-server
           IMAGE_TAG1: $COMMIT_HASH
           IMAGE_TAG2: ${{ steps.date.outputs.date }}
         run: |
@@ -52,7 +52,7 @@ jobs:
         working-directory: ./client
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{github.repository}}-client
+          ECR_REPOSITORY: ${{ github.event.repository.name }}-client
           IMAGE_TAG1: $COMMIT_HASH
           IMAGE_TAG2: ${{ steps.date.outputs.date }}
         run: |
