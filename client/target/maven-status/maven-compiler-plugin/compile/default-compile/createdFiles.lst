@@ -1,0 +1,3 @@
+org/example/rest/HelloResource.class
+org/example/rest/MenuResource.class
+org/example/rest/lib/DrinkClient.class

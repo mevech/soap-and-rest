@@ -1,0 +1,4 @@
+org/example/rest/HelloWorldResource.class
+org/example/rest/DrinkServer.class
+org/example/soap/HelloWorld.class
+org/example/soap/HelloWorldImpl.class
