@@ -11,8 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      COMMIT_HASH: ${{ github.head_ref }}.${{ github.sha }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
@@ -53,7 +51,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{ github.event.repository.name }}-client
-          IMAGE_TAG1: $COMMIT_HASH
+          IMAGE_TAG1: ${{ github.sha }}
           IMAGE_TAG2: ${{ steps.date.outputs.date }}
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG1 -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG2 .
